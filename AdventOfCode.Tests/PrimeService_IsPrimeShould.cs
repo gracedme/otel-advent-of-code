@@ -1,7 +1,8 @@
+/**
+using AdventOfCode;
 using Xunit;
-using Prime.Services;
 
-namespace Prime.UnitTests.Services
+namespace AdventOfCodeTests
 {
     public class PrimeService_IsPrimeShould
     {
@@ -15,3 +16,4 @@ namespace Prime.UnitTests.Services
         }
     }
 }
+*/

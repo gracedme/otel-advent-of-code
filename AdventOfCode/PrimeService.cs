@@ -1,17 +1,14 @@
-﻿// namespace AdventOfCode;
+﻿namespace AdventOfCode;
 using System;
 
-namespace Prime.Services
+public class PrimeService
 {
-    public class PrimeService
+    public bool IsPrime(int candidate)
     {
-        public bool IsPrime(int candidate)
+        if (candidate == 1)
         {
-            if (candidate == 1)
-            {
-                return false;
-            }
-            throw new NotImplementedException("Not implemented.");
+            return false;
         }
+        throw new NotImplementedException("Not implemented.");
     }
 }
