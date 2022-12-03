@@ -1,8 +1,26 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Diagnostics;
+using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
+
+var serviceName = "AdventOfCode";
+var serviceVersion = "0.1.0";
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddOpenTelemetryTracing(tracerProviderBuilder =>
+{
+    tracerProviderBuilder
+        .AddConsoleExporter()
+        .AddSource(serviceName)
+        .SetResourceBuilder(
+            ResourceBuilder.CreateDefault()
+            .AddService(serviceName: serviceName, serviceVersion: serviceVersion))
+        .AddHttpClientInstrumentation()
+        .AddAspNetCoreInstrumentation();
+});
 
 // Add services to the container.
 
