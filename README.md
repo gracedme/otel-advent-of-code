@@ -57,6 +57,9 @@ Sometimes when I right click on a Docker container and click `Stop`, nothing hap
 ### Mitigation
 Stop the container in Docker Desktop instead.
 
+## Swagger doesn't work
+There are no errors that I can find, but navigating to http://localhost:5000/swagger returns HTTP 404.
+
 # Solved problems
 
 ## No .gitignore file included by default
