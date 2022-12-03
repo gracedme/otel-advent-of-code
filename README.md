@@ -77,3 +77,13 @@ Instead of using the VSCode Docker extension to create and run the container fro
 docker run -p 5000:5000 <image_name>
 ```
 
+## Duplicate attribute errors
+When trying to build the Docker image, a bunch of errors like these would appear:
+```
+Error  CS0579  Duplicate 'global::System.Runtime.Versioning.TargetFrameworkAttribute' attribute
+```
+The fix was adding these lines to the inner projects' .csproj files.
+```
+<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute> 
+```
