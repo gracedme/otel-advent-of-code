@@ -1,5 +1,6 @@
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
+COPY input ./input
 EXPOSE 5000
 ENV ASPNETCORE_URLS=http://*:5000
 
