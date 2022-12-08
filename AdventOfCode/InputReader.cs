@@ -29,19 +29,16 @@ public class InputReader
 
         var values = Enumerable.Empty<int>();
         foreach (string line in lines)
-        {
-            var parsed = Int16.Parse(line);
-            values = values.Append(parsed);
-        }
+            values = values.Append(Int32.Parse(line));
 
         return values;
     }
 
     private static IEnumerable<string> GetLines(string twoDigitDay, bool useExample = false, bool tests = false)
     {
-        var actual = $"/input/2022/day{twoDigitDay}-actual.txt";
-        var example = $"/input/2022/day{twoDigitDay}-example.txt";
-        var path = System.IO.Directory.GetCurrentDirectory();
+        var actual   = $"/input/2022/day{twoDigitDay}-actual.txt";
+        var example  = $"/input/2022/day{twoDigitDay}-example.txt";
+        var path     = System.IO.Directory.GetCurrentDirectory();
         var fileName = useExample ? $"{path}/{example}" : $"{path}/{actual}";
         
         if (tests)
